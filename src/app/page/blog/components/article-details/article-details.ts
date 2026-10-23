@@ -3,12 +3,11 @@ import { Article } from '../../../../models/articles.models';
 import { articles } from '../../../../data/articles';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { NotFound } from '../../../not-found/not-found';
-import { MasteryPhotograpghyWidth } from '../../../../shared/components/mastery-photograpghy-width/mastery-photograpghy-width';
 import { MasteryPhotograpghyLength } from '../../../../shared/components/mastery-photograpghy-length/mastery-photograpghy-length';
 
 @Component({
   selector: 'app-article-details',
-  imports: [NotFound, RouterLink, MasteryPhotograpghyWidth, MasteryPhotograpghyLength],
+  imports: [NotFound, RouterLink, MasteryPhotograpghyLength],
   templateUrl: './article-details.html',
   styleUrl: './article-details.css',
 })

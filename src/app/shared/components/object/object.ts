@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { articles } from '../../../data/articles';
 
 @Component({
   selector: 'app-object-shared',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './object.html',
   styleUrl: './object.css',
 })
