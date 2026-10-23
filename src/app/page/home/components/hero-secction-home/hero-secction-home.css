@@ -1,0 +1,109 @@
+/* ===========================
+    Hero section Layout
+==============================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================
+    Light Overlays Layer
+==============================*/
+.background {
+    position: relative;;
+}
+
+.light-orange-circle ,
+ .light-yellow-circle {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+.light-orange-circle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px 600px at 15% 30% , rgba(249 , 115 , 22 , .10) , transparent 50%),
+                radial-gradient(400px 400px at 15% 30% , rgba(232 ,  116, 70 , 0.03), transparent 50%)
+    ;
+}
+ .light-yellow-circle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px 600px at 85% 65% , rgba(249 , 192 , 22 , .10) , transparent 50%),
+                radial-gradient(400px 400px at 85% 65% , rgba(232 ,  116, 70 , 0.03), transparent 50%)
+    ;
+}
+
+
+
+/* ===========================
+    Typography
+==============================*/
+.text-hero{
+    font-size: 70px;
+    font-weight: 700;
+}
+
+
+.text-hero > span{
+    color: var(--color-accent);
+}
+.text-p-hero {
+    font-size: 24px;
+    color: var(--color-text);
+    max-width: 672px;
+}
+
+.btn-hero-1{
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    transition: 0.3s;
+    padding-inline: 32px;
+    padding-block: 16px;
+    background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12));
+    border-radius: 3.40282e+38px;;
+}
+.btn-hero-1 i{
+    transition: 0.3s;
+}
+.btn-hero-1:hover{
+    transform: translateY(-5px);
+}
+.btn-hero-1:hover i{
+    transform: translateX(-5px);
+}
+.btn-hero-2 {
+    padding-inline: 32px;
+    padding-block: 16px;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+    transition: 0.3s;
+    border: 1px solid #333;
+    border-radius: 3.40282e38px;
+}
+
+
+.btn-hero-2:hover {
+    border: 1px solid #f97316;
+    color: #f97316;
+}
+
+
+
+

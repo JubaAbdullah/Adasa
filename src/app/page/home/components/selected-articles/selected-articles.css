@@ -1,0 +1,6 @@
+.selected-articles .text-p{
+    max-width: 512px;
+    margin-top: 16px;
+    font-size: 18px;
+    color: var(--color-text);
+}

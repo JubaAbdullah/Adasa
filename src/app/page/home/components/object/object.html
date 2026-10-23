@@ -1,0 +1,10 @@
+<section class="object-section">
+    <div class="container text-center py-5">
+        @for (des of describe.slice(2,3); track $index) {
+            <app-describe-section [describe]="des"></app-describe-section>
+        }
+        <h2 class="title text-object">استكشف حسب الموضوع</h2>
+        <p class="text-p-object">اعثر على محتوى مصمم حسب اهتماماتك</p>
+        <app-object-shared></app-object-shared>
+    </div>
+</section>

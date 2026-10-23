@@ -1,0 +1,16 @@
+.object-section{
+    background-color: #111111;
+    margin-top: 80px;
+}
+.text-object {
+    font-size: 60px;
+    line-height: 1.25;
+    font-weight: 700;
+}
+.text-p-object {
+    max-width: 512px;
+    font-size: 18px;
+    color: var(--color-text);
+    margin-inline: auto;
+    margin-top: 16px;
+}

@@ -1,0 +1,11 @@
+.text-head {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+.text-par {
+    font-size: 18px;
+    max-width: 672px;
+    text-align: center;
+    margin-inline: auto;
+}

@@ -1,0 +1,37 @@
+.hero-section {
+    position: relative;
+    padding-block: 150px;
+}
+
+
+
+.light-orange-circle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px 600px at 45% 30% , rgba(249 , 115 , 22 , .10) , transparent 50%),
+                radial-gradient(400px 400px at 45% 30% , rgba(232 ,  116, 70 , 0.03), transparent 50%)
+    ;
+}
+ .light-yellow-circle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px 600px at 60% 15% , rgba(249 , 192 , 22 , .10) , transparent 50%),
+                radial-gradient(400px 400px at 60% 15% , rgba(232 ,  116, 70 , 0.03), transparent 50%)
+    ;
+}
+
+.text-hero{
+    font-size: 70px;
+    font-weight: 700;
+}
+.text-hero > span{
+    color: var(--color-accent);
+}
+
+.text-p-hero {
+    font-size: 22px;
+    color: var(--color-text);
+    max-width: 672px;
+}

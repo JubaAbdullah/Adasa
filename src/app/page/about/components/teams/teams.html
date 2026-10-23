@@ -1,0 +1,22 @@
+<section class="py-5">
+    <div class="container text-center">
+        @for (desc of describe.slice(5,6); track $index) {
+            <app-describe-section [describe]="desc"></app-describe-section>
+        }
+        <h2 class="text-white text-head">تعرف على كتابنا</h2>
+        <p class="text-white-50 text-par">فريقنا من المصورين والكتاب ذوي الخبرة شغوفون بمشاركة معرفتهم مع المجتمع.</p>
+        <div class="row row-gap-5 py-5">
+            
+                @for (team of teams; track team.id) {
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <app-author [author]="team"></app-author>
+                    </div>
+                }   
+           
+        </div>
+
+
+        
+    </div>
+    <app-footer-about></app-footer-about>
+</section>

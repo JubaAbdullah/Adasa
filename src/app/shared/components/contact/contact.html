@@ -1,0 +1,64 @@
+
+<section class="newsletter-section" dir="rtl">
+  <div class="container">
+    <div class="newsletter-card">
+
+      <!-- Email Icon -->
+      <div class="newsletter-icon">
+        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+      </div>
+
+      <!-- Heading -->
+      <h2 class="newsletter-title">
+        اشترك في
+        <span>نشرتنا الإخبارية</span>
+      </h2>
+
+      <!-- Description -->
+      <p class="newsletter-description">
+        احصل على نصائح التصوير الحصرية ودروس جديدة مباشرة في بريدك الإلكتروني
+      </p>
+
+      <!-- Subscribe Form -->
+      <form
+        class="newsletter-form"
+        (submit)="$event.preventDefault()"
+      >
+        <input
+          type="email"
+          class="newsletter-input"
+          placeholder="أدخل بريدك الإلكتروني"
+          aria-label="البريد الإلكتروني"
+          required
+        >
+
+        <button type="submit" class="newsletter-button">
+          اشترك الآن
+        </button>
+      </form>
+
+      <!-- Social Proof -->
+      <div class="newsletter-proof">
+
+        <div class="subscriber-avatars" aria-label="المشتركون">
+          <img src="/images/img-1.png" class="subscriber-avatar avatar-one" />
+          <img src="/images/img-2.png" class="subscriber-avatar avatar-two" />
+          <img src="/images/img-3.jpg" class="subscriber-avatar avatar-three" />
+
+        </div>
+
+        <p class="subscriber-count">
+          انضم لـ <strong>10,000+</strong> مصور
+        </p>
+
+        <span class="proof-divider">بدون إزعاج</span>
+
+        <span class="unsubscribe-note">
+          إلغاء الاشتراك في أي وقت
+        </span>
+
+      </div>
+
+    </div>
+  </div>
+</section>

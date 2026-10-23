@@ -1,0 +1,126 @@
+/* ===========================
+    Light Overlays Layer
+==============================*/
+.background {
+    position: relative;;
+}
+
+.light-orange-circle ,
+ .light-yellow-circle {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+.light-orange-circle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px 600px at 15% 30% , rgba(249 , 115 , 22 , .10) , transparent 50%),
+                radial-gradient(400px 400px at 15% 30% , rgba(232 ,  116, 70 , 0.03), transparent 50%)
+    ;
+}
+ .light-yellow-circle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px 600px at 85% 65% , rgba(249 , 192 , 22 , .10) , transparent 50%),
+                radial-gradient(400px 400px at 85% 65% , rgba(232 ,  116, 70 , 0.03), transparent 50%)
+    ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.content span {
+    font-size: 180px;
+    font-weight: 900;
+    color: #ff6900;
+    margin: 0;
+}
+.icon-privacy {
+    background-color: #3C2608;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 112px;
+    height: 112px;
+    margin-bottom: 32px;
+    margin-inline: auto;
+    font-size: 50px;
+    border-radius: 50%;
+    color: #ff6900;
+    border: 1px solid #ff6900;
+}
+
+.content h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+.content p {
+    color: #a1a1a1;
+    font-size: 18px;
+    margin-bottom: 32px;
+}
+.btn-not button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.btn-1 {
+    background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12));
+    color: white;
+    padding-inline: 32px;
+    padding-block: 16px;
+    border-radius: 3.40282e+38px;
+    border: none;
+    font-size: 20px;
+    font-weight: 800;
+    transition: .3s;
+}
+.btn-1:hover {
+    transform: translateY(-5px);
+}
+.btn-2 {
+    color: white;
+    padding-inline: 32px;
+    padding-block: 16px;
+    border-radius: 3.40282e+38px;
+    font-size: 20px;
+    font-weight: 800;
+    transition: .3s;
+    background-color: transparent;
+    border: 1px solid #a1a1a1;
+}
+.btn-2:hover {
+    background-color: #3C2608;
+    border: 1px solid #ff6900;
+}
+.parag {
+    color: #ff6900;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+.ancor-not a{
+    color: #ff6900;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.ancor-not i {
+    font-size: 5px;
+}
+.ancor-not a:hover{
+    text-decoration: underline;
+}

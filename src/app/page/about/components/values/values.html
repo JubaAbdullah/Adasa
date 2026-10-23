@@ -1,0 +1,11 @@
+<section class="values" >
+  <h2 class="values__title">قيمنا</h2>
+  <p class="values__subtitle">المبادئ التي توجه كل ما نقوم بإنشائه</p>
+
+    <div class="values__grid">
+        @for (value of values; track $index) {
+          <app-value-component [value]="value"></app-value-component>
+        }
+
+    </div>
+</section>

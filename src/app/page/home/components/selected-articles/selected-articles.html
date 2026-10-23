@@ -1,0 +1,21 @@
+<section class="selected-articles mt-5">
+    <div class="container">
+        @for (title of titles.slice(1,2); track $index) {
+            <app-describe-section [describe]="title"></app-describe-section>
+        }
+        <h2 class="title">مقالات مختارة</h2>
+        <div class="d-flex justify-content-between align-items-center pb-4">
+            <p class="text-p">محتوى منتقى لبدء رحلة تعلمك</p>
+            <button class="ra-btn-orange-oval d-flex justify-content-center align-items-center gap-2" [routerLink]='["/blog"]'>عرض الكل <i class="fa-solid fa-arrow-left-long"></i></button>
+            
+        </div>
+
+        <div class="row">
+            @for (article of articles; track article.id) {
+                @if (article.featured) {
+                    <div class="col-12"><app-mastery-photograpghy-width [article]="article"></app-mastery-photograpghy-width></div>
+                }
+            }
+        </div>
+    </div>
+</section>

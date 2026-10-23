@@ -1,0 +1,126 @@
+.card {
+    position: relative;
+    background-color: var(--color-dark-card);
+    cursor: pointer;
+    padding: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.top-card {
+    position: absolute;
+    color: white;
+    font-weight: 600;
+    font-size: .75rem;
+    right: 20px;
+    top: 20px;
+    background-color: #0a0a0acc;
+    padding: 4px 12px;
+    border: 1px solid #333;
+    border-radius: 3.40282e38px;
+}
+.card-body {
+    /* padding: 24px; */
+}
+.card-img {
+    overflow: hidden;
+}
+.part-1-card {
+    color: #737373;
+    font-size: 14px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+    line-height: 1.42857;
+}
+.dout-card {
+    background-color: #525252;
+    border-radius: 3.40282e38px;
+    width: 4px;
+    height: 4px;
+}
+.card-body h3 {
+    color: white;
+    font-weight: 700;
+    line-height: 1.25;
+    font-size: 19px;
+    margin-bottom: 12px;
+    transition: .5s;
+}
+.card-body p {
+    color: var(--color-text);
+    font-size: 14px;
+    margin-bottom: 20px;
+    --tw-leading : 1.65;
+    line-height: 1.65;
+}
+.card-footer {
+    padding-top: 16px;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 0px;
+}
+.card-footer .right-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.card-footer .right-footer img {
+    width: 36px;
+    height: 36px;
+    border-radius: 3.40282e38px;
+    object-fit: cover;
+    border: #262626 solid 1px;
+}
+
+.card-footer .right-footer .content-footer p {
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.card-footer .right-footer .content-footer .footer-p {
+    color: #737373;
+    font-size: 12px;
+}
+
+.card-footer .left-footer  {
+    background-color: color-mix(in oklab,#ff6900 10%,transparent);
+    border: 1px solid color-mix(in oklab,#ff6900 20%,transparent);
+    border-radius: 3.40282e38px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+    color: #ff6900;
+}
+.card-footer .left-footer i{
+    font-size: 14px;
+    transition: .5s;
+}
+
+.card-img-top {
+    transition: 0.5s;
+}
+
+/* Hover */
+.card:hover .card-img-top {
+    transform: scale(1.2);
+}
+.card:hover {
+    transform: translateY(-4px);
+}
+.card:hover  h3 {
+    color: #ff6900;
+}
+.card:hover .left-footer {
+    background-color: #ff6900;
+    color: white;
+}

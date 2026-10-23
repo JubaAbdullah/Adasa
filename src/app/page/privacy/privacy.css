@@ -1,0 +1,229 @@
+/* ===========================
+    Light Overlays Layer
+==============================*/
+.background {
+    position: relative;;
+}
+
+.light-orange-circle ,
+ .light-yellow-circle {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+.light-orange-circle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px 600px at 15% 30% , rgba(249 , 115 , 22 , .10) , transparent 50%),
+                radial-gradient(400px 400px at 15% 30% , rgba(232 ,  116, 70 , 0.03), transparent 50%)
+    ;
+}
+ .light-yellow-circle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px 600px at 85% 65% , rgba(249 , 192 , 22 , .10) , transparent 50%),
+                radial-gradient(400px 400px at 85% 65% , rgba(232 ,  116, 70 , 0.03), transparent 50%)
+    ;
+}
+
+
+
+/* ===========================
+    Typography
+==============================*/
+.text-link {
+    color: #a1a1a1;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.text-link:hover {
+    color: var(--color-primary);
+}
+.text-link-2 {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+}
+.icon-privacy {
+    background-color: color-mix(in oklab,var(--color-light-over)10%,transparent);
+    border-color:     color-mix(in oklab,#ff6900 30%,transparent);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 16px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 24px;
+}
+.icon-privacy i {
+    color: #ff6900;
+    font-size: 25px;
+}
+.content h1 {
+    color: white;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+.content p {
+    color: #a1a1a1;
+    font-size: 18px;
+}
+
+
+
+
+.privacy-page {
+  background-color: #0a0a0a;
+  min-height: 100vh;
+  padding: 60px 16px 64px; /* 120px فوق عشان الناف بار fixed */
+  color: #d4d4d4;
+}
+
+.privacy-container {
+  max-width: 768px;
+  margin-inline: auto;
+}
+
+/* Highlight box */
+.privacy-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px 24px;
+  margin-bottom: 40px;
+  background: rgba(255, 105, 8, 0.08);
+  border: 1px solid rgba(255, 105, 8, 0.3);
+  border-radius: 12px;
+}
+
+.highlight-icon {
+  color: #ff6908;
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+.highlight-title {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff6908;
+}
+
+.highlight-text {
+  margin: 0;
+  font-size: 14px;
+  color: color-mix(in oklab, #ff8904 80%, transparent);
+}
+
+/* Sections */
+.privacy-section {
+  margin-bottom: 36px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.section-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #ff6908;
+  border-radius: 8px;
+}
+
+.section-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #a3a3a3;
+}
+
+/* Lists */
+.privacy-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.privacy-list li {
+  position: relative;
+  padding-inline-start: 24px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #a3a3a3;
+}
+
+.privacy-list li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.65em;
+  width: 8px;
+  height: 8px;
+  background-color: #ff6908;
+  border-radius: 50%;
+}
+
+.privacy-list strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Contact */
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ff6908;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact-link:hover {
+  color: #ff8904;
+}
+
+/* Footer */
+.privacy-footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #242424;
+  text-align: center;
+  font-size: 13px;
+  color: #737373;
+}
+
+.privacy-footer a {
+  color: #ff6908;
+  text-decoration: none;
+}
+
+.privacy-footer a:hover {
+  text-decoration: underline;
+}

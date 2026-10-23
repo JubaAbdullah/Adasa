@@ -1,0 +1,68 @@
+
+<nav class="navbar navbar-expand-md custom-navbar" [class.scrolled]="isScrolled" dir="rtl">
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand brand-logo" routerLink="/home">
+        <img src="/images/favicon.png" alt="">
+      <div class="brand-text">
+        <span class="brand-title">عدسة</span>
+        <span class="brand-subtitle">عالم التصوير الفوتوغرافي</span>
+      </div>
+
+      
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button
+      class="navbar-toggler custom-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent"
+      aria-controls="navbarContent"
+      aria-expanded="false"
+      aria-label="فتح القائمة"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div
+      class="collapse navbar-collapse"
+      id="navbarContent"
+    >
+      <ul class="navbar-nav mx-auto nav-links">
+        <li class="nav-item" >
+          <a class="nav-link" routerLink="/home"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >
+            الرئيسية
+          </a>
+        </li>
+
+        <li class="nav-item"  >
+          <a class="nav-link" routerLink="/blog" routerLinkActive="active">
+            المدونة
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about"  routerLinkActive="active">
+            من نحن
+          </a>
+        </li>
+      </ul>
+
+      <!-- Actions -->
+      <div class="navbar-actions">
+        <button class="search-btn" type="button" aria-label="بحث">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <a routerLink="/blog" class="btn read-btn">
+          ابدأ القراءة
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</nav>

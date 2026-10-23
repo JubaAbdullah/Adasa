@@ -1,0 +1,22 @@
+<section class="latest-articles my-5">
+    <div class="container">
+        @for (title of titles.slice(3,4); track $index) {
+            <app-describe-section [describe]="title"></app-describe-section>
+        }
+        <h2 class="title">أحدث المقالات</h2>
+        <div class="d-flex justify-content-between align-items-center pb-4">
+            <p class="text-p"> محتوى جديد طازج من المطبعة</p>
+            <span class="text-color d-flex justify-content-center align-items-center gap-2" [routerLink]='["/blog"]'>عرض كل المقالات <i class="fa-solid fa-arrow-left-long"></i></span>
+            
+        </div>
+
+        <div class="row d-flex">
+            @for (article of articles.slice(3,6); track article.id) {
+                <div class="col-12 col-md-6 col-lg-4">
+                    <app-mastery-photograpghy-length [article]="article"></app-mastery-photograpghy-length>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>

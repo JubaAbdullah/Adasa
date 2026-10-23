@@ -1,0 +1,21 @@
+ <section class="hero-section">
+    <div class="background ">
+        <!-- ? Light Over Lays -->
+        <div class="light-orange-circle"></div>
+        <div class="light-yellow-circle"></div>
+
+        <!-- ? content -->
+        <div class="container d-flex justify-content-center align-items-center flex-column text-center text-white">
+
+                @for (desc of describes.slice(6 , 7); track $index) {
+                    <app-describe-section [describe]="desc"></app-describe-section>
+                }
+
+            <h1 class="pb-4 text-hero">استكشف <span>مقالاتنا</span> <br/></h1>
+            <p class="pb-4 text-p-hero">اكتشف الدروس والرؤى وأفضل الممارسات للتطوير الحديث</p>
+
+
+   
+        </div>
+    </div>
+</section>

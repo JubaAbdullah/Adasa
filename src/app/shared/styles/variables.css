@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+/* Shared Style */
+:root {
+    --color-primary: #f97316;
+    --color-primary-light: #fb923c;
+    --color-primary-dark: #ea580c;
+    --color-accent: #FBA520;
+    --color-light-over: #5D2F0F;
+    --color-dark: #0a0a0a;
+    --color-dark-secondary: #111;
+    --color-dark-tertiary: #1a1a1a;
+    --color-dark-card: #161616;
+    --color-border: #262626;
+    --color-border-light: #333;
+    --color-border-nav: #545454;
+    --color-text-light: #717171;
+    --color-text: #A1A1A1;
+    --trasition-card: all 0.3s ease-in;
+    --trasition-image: all 0.7s ease-in;
+
+    /* Button Orange - Circle / More Border-redius */
+    --ra-btn-background-color: #F77015; 
+    --ra-btn-border-redius: 20px;
+    --ra-btn-text-color: white;
+    --ra-btn-padding: 8px 15px;
+    --ra-btn-border-color: transparent;
+    --ra-btn-font-size: .75rem;
+    --ra-btn-font-weight: 500;
+
+    /* Button Orange - Oval / less Border-redius */
+    --ra-btn-border-redius-oval: 10px;
+
+    /* Button Describe */
+    --ra-btn-desc-background-color: #28180B;
+    --ra-btn-desc-font-size: .6875rem;
+    --ra-btn-desc-border-color: #66330E;
+    --ra-btn-desc-padding: 5px 15px;
+
+    /* Card Category */
+    --ra-card-category-padding: 15px 30px;
+    --ra-card-category-border-redius: 20px;
+    --ra-card-category-background: #161616cc;
+
+    /* Hero Section Background Image */
+    --ra-home-background-image: linear-gradient(#26262680 1px, #0000 1px), linear-gradient(90deg, #26262680 1px, #0000 1px);
+}
+
+body{
+    font-family: Tajawal, system-ui, -apple-system, sans-serif;
+    background-color: rgb(10, 10, 10);
+    
+}
+::selection{
+    background-color: var(--color-primary);
+    color: white;
+}
+.text-orange{
+    color: var(--color-primary-dark);
+}
+
+.page-wrapper {
+  padding-top: 80px;
+}
+
+/* Button Orange - Circle */
+
+.ra-btn-orange-circle{
+    background-color: var(--ra-btn-background-color);
+    border-radius: var(--ra-btn-border-redius);
+    color: var(--ra-btn-text-color);
+    padding: var(--ra-btn-padding);
+    border-color: var(--ra-btn-border-color);
+    font-size: var(--ra-btn-font-size);
+    font-weight: var(--ra-btn-font-weight);
+    text-decoration: none;
+}
+
+/* Button Orange - Oval */
+
+.ra-btn-orange-oval{
+    background-color: var(--color-primary-dark);
+    border-radius: var(--ra-btn-border-redius-oval);
+    color: var(--ra-btn-text-color);
+    font-size: 13px;
+    padding: var(--ra-btn-padding);
+    border: none;
+}
+
+/* Button Describe */
+
+.ra-btn-describe{
+    background-color: var(--ra-btn-desc-background-color);
+    border-radius: var(--ra-btn-border-redius);
+    color: var(--color-primary);
+    padding: var(--ra-btn-desc-padding);
+    border: 1px solid var(--ra-btn-desc-border-color);
+    font-size: var(--ra-btn-desc-font-size);
+    font-weight: var(--ra-btn-font-weight);
+}
+
+.dot-one{
+    font-size: .3125rem;
+}
+
+.dot-two{
+    font-size: .4375rem;
+    margin-right: 3px;
+    margin-left: 8px;
+    position: relative;
+}
+
+/* Text Color */
+.text-color{
+    color: var(--color-primary-dark);
+}
+
+/* Card Category */
+.card-category{
+    border: 1px solid var(--color-border);
+    padding: var(--ra-card-category-padding);
+    border-radius: var(--ra-card-category-border-redius);
+    background-color: var(--ra-card-category-background);
+    cursor: pointer;
+    transition: var(--trasition-card);
+}
+
+.card-category > p{
+    margin: 0;
+}
+
+.card-category > i{
+    font-size: 1.25rem;
+    color: var(--color-primary-dark);
+}
+
+.card-category > p.number{
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--color-primary-light);
+}
+.card-category > p{
+    font-size: .875rem;
+    color: var(--color-text-light);
+    font-weight: 300;
+}
+
+.card-category:hover{
+    transform: scale(1.1);
+}
+
+/* Hero Section Background Image */
+.hero-section{
+    position: relative;
+}
+
+.hero-section > .background{
+    padding: 55px;
+    inset: 0;
+    position: absolute;
+    background-image: linear-gradient(#26262680 1px, #0000 1px), linear-gradient(90deg, #26262680 1px, #0000 1px);
+    background-size: 50px 50px;
+}
+
+/* Text-white-50 */
+.text-white-50{
+    color: #D4D4D4 !important;
+}
+
+/* Button - اعرف المزيد */
+.btn-info{
+    background-color: transparent;
+    border-radius: var(--ra-btn-border-redius);
+    color: var(--ra-btn-text-color);
+    padding: 8px 20px;
+    border: 0.5px solid var(--color-text-light);
+    font-size: var(--ra-btn-font-size);
+    font-weight: var(--ra-btn-font-weight);
+    transition: var(--trasition-card);
+}
+
+.btn-info:hover{
+    border-color: var(--color-primary-dark);
+    background-color: var(--color-light-over);
+    color: var(--color-primary-dark);
+}
+
+/* Icon */
+.fa-magnifying-glass{
+  color: var(--color-border-nav);
+  cursor: pointer;
+}
+
+/* Title of Sections */
+
+.title{
+    font-size: 50px;
+    color: white;
+}
+
+.title-paragraph{
+    color: var(--color-text);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+/* Object Shared Component Style */
+
+.category-card {
+  background: #111;
+  border-radius: 28px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+  padding-block: 50px;
+}
+
+/* BEFORE HOVER */
+.category-card h4 {
+  color: #fff;
+  font-size: 16px;
+}
+
+.category-card p {
+  color: var(--color-text);
+  font-size: 11.5px;
+}
+
+.icon-box {
+  padding: 8px;
+  width: fit-content;
+  border-radius: 5px;
+  background: var(--ra-btn-desc-background-color);
+  color: var(--color-primary-dark);
+  border: 0.5px solid var(--color-primary);
+  transition: var(--trasition-card);
+}
+
+.arrow-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  position: absolute;
+  top: 40%;
+  left: 25px;
+  opacity: 0;
+  transition: var(--trasition-card);
+}
+
+/* AFTER HOVER */
+.category-card:hover {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-accent));
+  transform: translateY(-6px);
+}
+
+.category-card:hover h4,
+.category-card:hover p {
+  color: #fff;
+}
+
+.category-card:hover .icon-box {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.category-card:hover .arrow-icon {
+  opacity: 1;
+  transform: translateX(-5px);
+}
+
+/* Border Bottom */
+
+.border-bottom{
+    border-bottom: 0.2px solid var(--color-border-nav);
+}

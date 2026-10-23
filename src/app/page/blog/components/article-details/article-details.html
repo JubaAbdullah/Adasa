@@ -1,0 +1,219 @@
+@if(post){
+
+
+<!-- blog-hero.component.html -->
+<section class="post-hero " dir="rtl">
+  <!-- صورة الخلفية + الأوفرلاي -->
+  <div class="post-hero__bg" [style.background-image]="'url(' + post.image + ')'"></div>
+  <div class="post-hero__overlay"></div>
+
+  <!-- Breadcrumb -->
+  <nav class="post-hero__crumbs" aria-label="breadcrumb">
+    <a routerLink="/" class="crumb crumb--home" aria-label="الرئيسية">
+      <i class="fa-solid fa-house"></i>
+    </a>
+    <i class="fa fa-chevron-left crumb-sep"></i>
+    <a routerLink="/blog" class="crumb">المدونة</a>
+    <i class="fa fa-chevron-left crumb-sep"></i>
+    <span class="crumb crumb--current">{{post.category}}</span>
+  </nav>
+
+  <div class="container post-hero__content">
+    <!-- Meta -->
+    <div class="post-meta">
+      <a href="#" class="post-meta__badge">{{post.category}}</a>
+
+      <span class="post-meta__item">
+        <i class="fa-solid fa-calendar"></i>
+          {{post.date}}
+      </span>
+
+      <span class="post-meta__item">
+        <i class="fa fa-clock"></i>
+        {{post.readTimeMinutes}}
+      </span>
+    </div>
+
+    <!-- Title -->
+    <h1 class="post-hero__title">{{post.title}}</h1>
+
+    <!-- Author -->
+    <a href="#" class="author-card">
+      <img class="author-card__avatar" [src]="post.author.avatar" [alt]="post.author.name" />
+      <div class="author-card__info">
+        <strong class="author-card__name">{{post.author.name}}</strong>
+        <span class="author-card__role">{{post.author.role}}</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+
+
+
+<!-- article-body.component.html -->
+<section class="article-section container" dir="rtl">
+  <div class="article-wrap">
+    <div class="article-grid ">
+
+      <!-- ============ المحتوى (يمين) ============ -->
+      <article class="article-main">
+
+        <blockquote class="quote-box">
+          {{intro}}
+        </blockquote>
+
+        <p class="article-p">
+          الساعة الذهبية هي أكثر الأوقات سحراً للتصوير الفوتوغرافي. ذلك الوقت القصير بعد شروق الشمس وقبل غروبها حيث يكون الضوء ناعماً ودافئاً وساحراً.
+        </p>
+
+        @for (section of sections; track $index) {
+           <h2 class="article-h2" id="section-1">
+          <span class="h2-icon"><i class="fa-regular fa-camera"></i></span>
+          <span>{{section.title}}</span>
+        </h2>
+        <p class="article-p">
+          {{section.paragraph}}
+        </p>
+        }
+
+
+
+        <div class="article-footer">
+          <div class="d-flex text-center  align-items-center gap-3 mb-3">
+            <div class="icon-article"><i class="fa-solid fa-tags"></i></div>
+            <h3>الوسوم</h3>
+          </div>
+          <div class="d-flex flex-wrap gap-2">
+            <span>#إضاءة</span>
+            <span>#الساعة الذهبية</span>
+            <span>#تصوير خارجي</span>
+          </div>
+
+        </div>
+        <div class="article-footer-2">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-4">
+            <div class="d-flex align-items-center gap-3 ">
+              <div class="article-footer-2-icon"><i class="fa-solid fa-share-nodes"></i></div>
+              <h3>شارك المقال</h3>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="btn-1"><i class="fa-brands fa-x-twitter"></i></button>
+              <button class="btn-2"><i class="fa-brands fa-linkedin-in"></i></button>
+              <button class="btn-3"><i class="fa-brands fa-whatsapp"></i></button>
+              <button class="btn-4"><i class="fa-solid fa-link"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="article-footer-3">
+          <div class="d-flex align-items-md-start align-items-center flex-column flex-md-row gap-4 ">
+            <img [src]="post.author.avatar" alt="">
+            <div class="text-center text-md-end">
+              <span>كاتب المقال</span>
+              <h3>{{post.author.name}}</h3>
+              <p class="par-1">{{post.author.role}}</p>
+              <p class="par-2">مصور محترف شغوف بمشاركة المعرفة والخبرات في عالم التصوير الفوتوغرافي.</p>
+            </div>
+          </div>
+        </div>
+    </article>
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- ============ الجنب (شمال) - sticky ============ -->
+      <aside class="article-side">
+
+        <div class="side-card">
+          <div class="toc-head">
+            <span class="toc-head__icon"><i class="fa-solid fa-list"></i></span>
+            <h3 class="toc-head__title">محتويات المقال</h3>
+          </div>
+
+          <nav class="toc">
+           @for (t of toc; track $index ; let i = $index) {
+            <a class="toc-item" [routerLink]="[]" fragment="section-1">
+              <span class="toc-item__num">{{i + 1}}</span>
+              <span>{{t.title}}</span>
+            </a>
+           }
+          </nav>
+        </div>
+
+        <div class="side-card side-card--stats">
+          <div class="stat">
+            <i class="fa-regular fa-calendar"></i>
+            <strong>{{post.date}}</strong>
+            <span>تاريخ النشر</span>
+          </div>
+          <div class="stat">
+            <i class="fa-regular fa-clock"></i>
+            <strong>{{post.readTimeMinutes}}</strong>
+            <span>وقت القراءة</span>
+          </div>
+        </div>
+
+
+
+
+        <div class="parent-aside">
+            <div class="text-center">
+                <div class="icon-aside"><i class="fa-solid fa-envelope"></i></div>
+                <h3>لا تفوّت جديدنا</h3>
+                <p>اشترك للحصول على أحدث المقالات</p>
+                <a routerLink="/blog" class="">تصفح المزيد</a>
+            </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <section class="container">
+    <div class="d-flex align-items-center justify-content-between mb-5">
+      <div class="d-flex align-items-center gap-3">
+        <span class="span-articles"><i class="fa-solid fa-images"></i></span>
+        <div class="content-footer-art">
+          <h2>مقالات قد تعجبك</h2>
+          <p>استكشف المزيد من المحتوى المميز</p>
+        </div>
+      </div>
+      <a class="left-art" routerLink="/blog">عرض الكل
+        <i class="fa-solid fa-arrow-left-long"></i>
+      </a>
+    </div>
+    <div class="row">
+      @for (article of relatedArticles; track article.slug) {
+        <div class="col-4">
+          <app-mastery-photograpghy-length [article]="article"></app-mastery-photograpghy-length>
+        </div>
+      }
+    </div>
+  </section>
+
+
+}@else {
+    <app-not-found></app-not-found>
+}

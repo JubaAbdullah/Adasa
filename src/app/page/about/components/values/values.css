@@ -1,0 +1,51 @@
+:host {
+  --card-bg: #141414;
+  --card-border: #262626;
+  --orange: #ff6a00;
+  --orange-soft: rgba(255, 106, 0, 0.10);
+  --orange-border: rgba(255, 106, 0, 0.35);
+  --white: #ffffff;
+  --muted: #8a8a8a;
+
+  display: block;
+  color: var(--white);
+}
+
+.values__grid {
+  max-width: 1090px;
+  margin: 76px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.values {
+    padding-block: 80px;
+    text-align: center;
+    background-color: #111111;
+    border: 1px solid var(--color-border);
+}
+
+/* ===== العنوان ===== */
+.values__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.values__title::before,
+.values__title::after {
+  content: "";
+  width: 5px;
+  height: 32px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #ff9500, var(--orange));
+}
+
+.values__subtitle {
+  margin-top: 18px;
+  font-size: 18px;
+  color: var(--muted);
+}

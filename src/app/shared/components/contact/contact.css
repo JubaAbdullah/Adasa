@@ -1,0 +1,309 @@
+
+/* ==============================
+   Newsletter Section
+================================ */
+
+.newsletter-section {
+  width: 100%;
+  padding: 70px 0 64px;
+  background:
+    radial-gradient(
+      ellipse at 50% 35%,
+      rgba(255, 105, 8, 0.055),
+      transparent 48%
+    ),
+    #0a0a0a;
+
+  color: #f5f5f5;
+
+}
+
+/* Main Card */
+.newsletter-card {
+  width: 100%;
+  max-width: 555px;
+  min-height: 301px;
+  margin-inline: auto;
+  padding: 43px 38px 38px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  background-color: #161616;
+  border: 1px solid #292929;
+  border-radius: 17px;
+}
+
+/* Email Icon */
+.newsletter-icon {
+  width: 43px;
+  height: 43px;
+  margin-bottom: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #ff5e00;
+  border-radius: 12px;
+
+  color: #fff;
+  font-size: 19px;
+}
+
+/* Heading */
+.newsletter-title {
+  margin: 0 0 9px;
+
+  color: #f8f8f8;
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+.newsletter-title span {
+  color: #ff790e;
+}
+
+/* Description */
+.newsletter-description {
+  width: 100%;
+  margin: 0 0 21px;
+
+  color: #999;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+/* Form */
+.newsletter-form {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+
+  width: 100%;
+  margin-bottom: 17px;
+}
+
+/* Email Input */
+.newsletter-input {
+  flex: 1;
+  min-width: 0;
+  height: 39px;
+  padding: 0 13px;
+
+  background-color: #090909;
+  border: 1px solid #2b2b2b;
+  border-radius: 9px;
+  outline: none;
+
+  color: #f5f5f5;
+  font-family: inherit;
+  font-size: 10px;
+  text-align: right;
+
+  transition: border-color 0.2s ease;
+}
+
+.newsletter-input::placeholder {
+  color: #777;
+  opacity: 1;
+}
+
+.newsletter-input:focus {
+  border-color: #ff6908;
+}
+
+/* Subscribe Button */
+.newsletter-button {
+  flex-shrink: 0;
+  min-width: 95px;
+  height: 39px;
+  padding: 0 15px;
+
+  border: 1px solid #ff5e00;
+  border-radius: 9px;
+
+  background-color: #ff5e00;
+  color: #fff;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 800;
+
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.newsletter-button:hover {
+  background-color: #e95300;
+  transform: translateY(-1px);
+}
+
+/* Subscriber Details */
+.newsletter-proof {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 11px;
+
+  width: 100%;
+  min-height: 22px;
+
+  color: #777;
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+.subscriber-avatars {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding-inline-start: 3px;
+}
+
+.subscriber-avatar {
+  width: 21px;
+  height: 21px;
+  margin-inline-start: -5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #292929;
+  border-radius: 50%;
+
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.avatar-one {
+  background: #756b61;
+}
+
+.avatar-two {
+  background: #536c76;
+}
+
+.avatar-three {
+  background: #9b745f;
+}
+
+.subscriber-count,
+.proof-divider,
+.unsubscribe-note {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.subscriber-count strong {
+  color: #fff;
+  font-weight: 800;
+}
+
+.proof-divider {
+  color: #777;
+}
+
+/* ==============================
+   Tablet
+================================ */
+
+@media (max-width: 767.98px) {
+  .newsletter-section {
+    padding: 55px 16px;
+  }
+
+  .newsletter-card {
+    max-width: 555px;
+    padding: 36px 28px;
+  }
+
+  .newsletter-title {
+    font-size: 21px;
+  }
+
+  .newsletter-description {
+    max-width: 420px;
+  }
+}
+
+/* ==============================
+   Mobile
+================================ */
+
+@media (max-width: 480px) {
+  .newsletter-section {
+    padding: 40px 12px;
+  }
+
+  .newsletter-card {
+    min-height: auto;
+    padding: 30px 18px;
+    border-radius: 15px;
+  }
+
+  .newsletter-icon {
+    width: 41px;
+    height: 41px;
+    margin-bottom: 12px;
+  }
+
+  .newsletter-title {
+    font-size: 19px;
+  }
+
+  .newsletter-description {
+    margin-bottom: 19px;
+    font-size: 11px;
+  }
+
+  .newsletter-form {
+    gap: 7px;
+  }
+
+  .newsletter-input {
+    height: 42px;
+    padding-inline: 10px;
+    font-size: 10px;
+  }
+
+  .newsletter-button {
+    min-width: 83px;
+    height: 42px;
+    padding-inline: 10px;
+    font-size: 10px;
+  }
+
+  .newsletter-proof {
+    gap: 8px;
+    font-size: 8px;
+  }
+}
+
+/* Very Small Screens */
+@media (max-width: 350px) {
+  .newsletter-card {
+    padding-inline: 12px;
+  }
+
+  .newsletter-title {
+    font-size: 17px;
+  }
+
+  .newsletter-proof {
+    gap: 6px;
+  }
+
+  .unsubscribe-note {
+    white-space: normal;
+  }
+}

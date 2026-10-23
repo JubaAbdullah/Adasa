@@ -1,0 +1,40 @@
+ <section class="hero-section">
+    <div class="background min-vh-100">
+        <!-- ? Light Over Lays -->
+        <div class="light-orange-circle"></div>
+        <div class="light-yellow-circle"></div>
+
+        <!-- ? content -->
+        <div class="container d-flex justify-content-center align-items-center flex-column text-center text-white">
+
+                @for (desc of describes.slice(0 , 1); track $index) {
+                    <app-describe-section [describe]="desc"></app-describe-section>
+                }
+
+            <h1 class="pb-4 text-hero">اكتشف <span>فن</span> <br/> التصوير الفوتوغرافي</h1>
+            <p class="pb-4 text-p-hero">انغمس في أسرار المحترفين ونصائح عملية لتطوير مهاراتك في التصوير.</p>
+            <div class="pb-4 d-flex gap-3">
+                <button class="ra-btn-orange-circle d-flex justify-content-center align-items-center gap-2 btn-hero-1" routerLink="/blog">
+                    استكشف المقالات 
+                    <i class="fa-solid fa-arrow-left-long"></i>
+                </button>
+                <button class="btn-info d-flex justify-content-center align-items-center gap-2 btn-hero-2" routerLink="/about">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                        </path>
+                    </svg>
+                    اعرف المزيد
+                </button>
+            </div>
+
+            <div class="row w-75 g-2 pt-3">
+                @for (category of categories.slice(0,4); track $index) {
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <app-category [category]="category"></app-category>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

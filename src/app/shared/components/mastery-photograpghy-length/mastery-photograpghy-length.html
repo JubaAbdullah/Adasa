@@ -1,0 +1,42 @@
+<section class="card" [class.card--grid]="layout === 'grid'" [routerLink]="['/blog', article.slug]">
+    <!--! top el card -->
+    <div class="card-img">
+        <img  [src]="article.image" class="card-img-top" [alt]="article.title" />
+    </div>
+    <!--? postion top  -->
+  <span class="top-card">{{article.category}}</span>
+
+  <!-- ** card body -->
+  <div class="card-body">
+    <!--part-1  -->
+    <div class="part-1-card">
+        <span>
+            <i class="fa-regular fa-clock"></i>
+            {{article.readTimeMinutes}}
+        </span>
+        <span class="dout-card"></span>
+        <span>{{article.date}}</span>
+    </div>
+
+    <!--part-2  -->
+    <h3>{{article.title}} </h3>
+    <p>{{article.excerpt}}</p>
+
+    <!--part-3 -->
+    <div class="card-footer">
+        <div class="right-footer">
+            <img [src]="article.author.avatar" [alt]="article.author.name">
+            <div class="content-footer">
+                <p>{{article.author.name}}</p>
+                <p class="footer-p">{{article.author.role}}</p>
+            </div>
+        </div>
+        <div class="left-footer">
+            <i class="fa-solid fa-angle-left"></i>
+        </div>
+    </div>
+  </div>
+
+
+
+</section>
