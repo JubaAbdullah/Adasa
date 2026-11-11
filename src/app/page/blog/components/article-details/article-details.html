@@ -204,9 +204,9 @@
         <i class="fa-solid fa-arrow-left-long"></i>
       </a>
     </div>
-    <div class="row">
+    <div class="row row-gap-3 p-2">
       @for (article of relatedArticles; track article.slug) {
-        <div class="col-4">
+        <div class="col-12 col-md-6 col-xl-4">
           <app-mastery-photograpghy-length [article]="article"></app-mastery-photograpghy-length>
         </div>
       }

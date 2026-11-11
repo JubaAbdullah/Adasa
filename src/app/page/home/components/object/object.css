@@ -1,16 +1,52 @@
-.object-section{
+
+.object-section {
     background-color: #111111;
     margin-top: 80px;
+    padding-block: 48px;
 }
+
+.object-section__container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 .text-object {
-    font-size: 60px;
+    font-size: clamp(32px, 5vw, 60px);
     line-height: 1.25;
     font-weight: 700;
 }
+
 .text-p-object {
+    width: 100%;
     max-width: 512px;
-    font-size: 18px;
+    font-size: clamp(15px, 1.5vw, 18px);
     color: var(--color-text);
     margin-inline: auto;
     margin-top: 16px;
+    margin-bottom: 0;
+}
+
+/* Tablets */
+@media (max-width: 991.98px) {
+    .object-section {
+        margin-top: 60px;
+        padding-block: 40px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+    .object-section {
+        margin-top: 40px;
+        padding-block: 32px;
+    }
+
+    .text-object {
+        font-size: 32px;
+    }
+
+    .text-p-object {
+        font-size: 15px;
+        margin-top: 12px;
+    }
 }

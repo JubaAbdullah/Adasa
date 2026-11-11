@@ -1,10 +1,11 @@
-
 /* =========================
    Footer Base
 ========================= */
 
 .site-footer {
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* يمنع أي سكرول أفقي من الدواير */
   background-color: #0a0a0a;
   color: #f5f5f5;
   border-top: 1px solid #292929;
@@ -22,45 +23,46 @@
    Main Footer
 ========================= */
 
+.footer-main {
+  position: relative;
+  padding: 62px 0 60px;
+  overflow: hidden;
+}
 
+/* المحتوى فوق الدواير */
+.footer-main .container {
+  position: relative;
+  z-index: 1;
+}
 
 /* ===========================
     Light Overlays Layer
 ==============================*/
-.background {
-    position: relative;;
+.light-orange-circle,
+.light-yellow-circle {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
-.footer-main {
-  padding: 62px 0 60px;
-  position: relative;
-}
-
-.light-orange-circle ,
- .light-yellow-circle {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-}
 .light-orange-circle::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(600px 600px at 50% 50% , rgba(249 , 115 , 22 , .05) , transparent 40%),
-                radial-gradient(400px 400px at 25% 30% , rgba(232 ,  116, 70 , 0.03), transparent 30%)
-    ;
-}
- .light-yellow-circle::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(600px 600px at 70% 65% , rgba(249 , 192 , 22 , .05) , transparent 50%),
-                radial-gradient(400px 400px at 85% 65% , rgba(232 ,  116, 70 , 0.03), transparent 50%)
-    ;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 600px at 50% 50%, rgba(249, 115, 22, 0.05), transparent 40%),
+    radial-gradient(400px 400px at 25% 30%, rgba(232, 116, 70, 0.03), transparent 30%);
 }
 
-
+.light-yellow-circle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 600px at 70% 65%, rgba(249, 192, 22, 0.05), transparent 50%),
+    radial-gradient(400px 400px at 85% 65%, rgba(232, 116, 70, 0.03), transparent 50%);
+}
 
 .footer-row {
   align-items: flex-start;
@@ -84,7 +86,7 @@
   margin: 0 0 27px;
   color: #f5f5f5;
 
-  font-size:   18px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.7;
   white-space: nowrap;
@@ -96,8 +98,7 @@
   width: 32px;
   height: 2px;
   flex-shrink: 0;
-
-  background: linear-gradient( to right , #ff6900 ,  #f0b100);
+  background: linear-gradient(to right, #ff6900, #f0b100);
 }
 
 /* =========================
@@ -130,14 +131,15 @@
   color: #fff;
   font-size: 25px;
   font-weight: 800;
-
   box-shadow: 0 5px 20px rgba(255, 105, 8, 0.12);
   transition: 0.3s;
   cursor: pointer;
 }
+
 .brand-mark:hover {
   scale: 1.07;
 }
+
 .brand-description {
   margin: 0 0 24px;
   color: #777;
@@ -170,7 +172,6 @@
 
   background-color: #151515;
   color: #777;
-
   font-size: 17px;
 
   transition:
@@ -207,11 +208,9 @@
 
 .footer-links a {
   display: inline-block;
-
   color: #777;
   font-size: 14px;
   line-height: 1.8;
-
   transition: color 0.25s ease, padding 0.25s ease;
 }
 
@@ -219,20 +218,22 @@
   color: #ff6908;
   padding-inline-start: 8px;
 }
-.icon-footer{
+
+.icon-footer {
   opacity: 0;
   transition: 0.25s;
 }
+
 .footer-links a:hover .icon-footer {
   opacity: 1;
 }
+
 /* =========================
    Newsletter
 ========================= */
 
 .newsletter-description {
   margin: 0 0 17px;
-
   color: #777;
   font-size: 14px;
   line-height: 1.9;
@@ -249,7 +250,6 @@
   display: block;
   width: 100%;
   min-height: 47px;
-
   padding: 12px 15px;
 
   background-color: #171717;
@@ -259,7 +259,7 @@
 
   color: #f5f5f5;
   font-family: inherit;
-  font-size: 12px;
+  font-size: 14px;
 
   transition: border-color 0.25s, box-shadow 0.25s;
 }
@@ -290,7 +290,7 @@
   color: #fff;
 
   font-family: inherit;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
 
   cursor: pointer;
@@ -315,7 +315,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 12px 20px;
 
   min-height: 68px;
   padding-top: 12px;
@@ -342,7 +343,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 26px;
+  gap: 8px 26px;
 }
 
 .legal-links a {
@@ -355,8 +356,49 @@
   color: #ff6908;
 }
 
+/* الأجهزة اللي بتشتغل باللمس (مفيش hover):
+   نشيل السهم عشان ميبقاش في فراغ فاضي قبل اللينكات */
+@media (hover: none) {
+  .icon-footer {
+    display: none;
+  }
+}
+
 /* =========================
-   Tablet
+   Large Desktop (1200px+)
+========================= */
+
+@media (min-width: 1200px) {
+  .footer-row {
+    column-gap: 0;
+  }
+}
+
+/* =========================
+   Small Laptop (992px - 1199px)
+   الأعمدة الأربعة ضيقة شوية هنا
+========================= */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .footer-heading {
+    font-size: 16px;
+  }
+
+  .brand-description,
+  .footer-links a,
+  .newsletter-description {
+    font-size: 13px;
+  }
+
+  .newsletter-input,
+  .subscribe-btn {
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   Tablet (أقل من 992px)
+   عمودين جنب بعض
 ========================= */
 
 @media (max-width: 991.98px) {
@@ -368,16 +410,12 @@
     row-gap: 42px;
   }
 
-  .footer-column {
-    padding-inline: 18px;
-  }
-
   .footer-heading {
     margin-bottom: 22px;
   }
 
   .brand-description {
-    max-width: 340px;
+    max-width: 380px;
   }
 
   .newsletter-column {
@@ -386,7 +424,30 @@
 }
 
 /* =========================
-   Mobile
+   Tablet صغير (576px - 767px)
+   عمود واحد، والنيوزليتر يبقى في صف واحد
+========================= */
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .newsletter-form {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .newsletter-input {
+    flex: 1 1 auto;
+    width: auto;
+  }
+
+  .subscribe-btn {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 120px;
+  }
+}
+
+/* =========================
+   Mobile (أقل من 576px)
 ========================= */
 
 @media (max-width: 575.98px) {
@@ -398,26 +459,32 @@
     row-gap: 35px;
   }
 
-  .footer-column {
-    padding-inline: 12px;
-  }
-
   .brand-heading {
     margin-bottom: 17px;
+  }
+
+  .brand-heading h3 {
+    font-size: 19px;
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
   }
 
   .brand-description {
     max-width: 100%;
     margin-bottom: 18px;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .footer-heading {
     margin-bottom: 17px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
-  .footer-heading::after {
+  .footer-heading::before {
     width: 27px;
   }
 
@@ -425,33 +492,69 @@
     gap: 12px;
   }
 
+  .footer-links a {
+    font-size: 14px;
+    padding-block: 2px; /* مساحة لمس أكبر */
+  }
+
   .newsletter-description {
     margin-bottom: 14px;
+    font-size: 13px;
+  }
+
+  /* 16px بيمنع الزووم التلقائي في iPhone لما تدوس على الحقل */
+  .newsletter-input {
+    font-size: 16px;
+  }
+
+  .subscribe-btn {
+    min-height: 50px;
+    font-size: 14px;
   }
 
   .footer-bottom-content {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
 
     padding-top: 20px;
     padding-bottom: 20px;
-
     text-align: center;
   }
 
   .copyright {
     justify-content: center;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .legal-links {
     justify-content: center;
-    gap: 20px;
+    gap: 8px 20px;
   }
 
   .legal-links a {
-    font-size: 10px;
+    font-size: 12px;
+  }
+}
+
+/* =========================
+   Very Small Phones (أقل من 360px)
+========================= */
+
+@media (max-width: 359.98px) {
+  .footer-heading {
+    font-size: 15px;
+  }
+
+  .social-link {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .copyright,
+  .legal-links a {
+    font-size: 11px;
   }
 }

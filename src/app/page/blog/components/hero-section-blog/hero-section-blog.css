@@ -1,37 +1,121 @@
-.hero-section {
+/* =========================
+   Hero Section
+========================= */
+.background {
     position: relative;
-    padding-block: 150px;
+    overflow: hidden;
 }
 
 
+
+/* =========================
+   Light Overlays
+========================= */
+.light-orange-circle,
+.light-yellow-circle {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none; /* عشان الدواير متمنعش الضغط على اللي تحتها */
+}
 
 .light-orange-circle::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(600px 600px at 45% 30% , rgba(249 , 115 , 22 , .10) , transparent 50%),
-                radial-gradient(400px 400px at 45% 30% , rgba(232 ,  116, 70 , 0.03), transparent 50%)
-    ;
-}
- .light-yellow-circle::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(600px 600px at 60% 15% , rgba(249 , 192 , 22 , .10) , transparent 50%),
-                radial-gradient(400px 400px at 60% 15% , rgba(232 ,  116, 70 , 0.03), transparent 50%)
-    ;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 600px at 45% 30%, rgba(249, 115, 22, 0.10), transparent 50%),
+    radial-gradient(400px 400px at 45% 30%, rgba(232, 116, 70, 0.03), transparent 50%);
 }
 
-.text-hero{
-    font-size: 70px;
-    font-weight: 700;
+.light-yellow-circle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 600px at 60% 15%, rgba(249, 192, 22, 0.10), transparent 50%),
+    radial-gradient(400px 400px at 60% 15%, rgba(232, 116, 70, 0.03), transparent 50%);
 }
-.text-hero > span{
-    color: var(--color-accent);
+
+/* المحتوى فوق الدواير */
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+/* =========================
+   Text
+========================= */
+.text-hero {
+  /* من 36px في الموبايل لحد 70px في الشاشات الكبيرة */
+  font-size: clamp(36px, 8vw, 70px);
+  font-weight: 700;
+  line-height: 1.25;
+  overflow-wrap: break-word;
+}
+
+.text-hero > span {
+  color: var(--color-accent, #ff6908);
 }
 
 .text-p-hero {
-    font-size: 22px;
-    color: var(--color-text);
-    max-width: 672px;
+  /* من 16px في الموبايل لحد 22px في الشاشات الكبيرة */
+  font-size: clamp(16px, 2.6vw, 22px);
+  line-height: 1.8;
+  color: var(--color-text, #999);
+  width: 100%;
+  max-width: 672px;
+}
+
+/* =========================
+   Tablet (أقل من 992px)
+========================= */
+@media (max-width: 991.98px) {
+  .text-hero {
+    padding-bottom: 1.25rem !important;
+  }
+}
+
+/* =========================
+   Mobile (أقل من 576px)
+========================= */
+@media (max-width: 575.98px) {
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+  .hero-section .container {
+    padding-inline: 20px;
+  }
+
+  .text-hero {
+    line-height: 1.35;
+    padding-bottom: 1rem !important;
+  }
+
+  .text-p-hero {
+    line-height: 1.7;
+    padding-bottom: 0 !important;
+  }
+}
+
+/* =========================
+   Very Small Phones (أقل من 360px)
+========================= */
+@media (max-width: 359.98px) {
+  .text-hero {
+    font-size: 32px;
+  }
+
+  .text-p-hero {
+    font-size: 15px;
+  }
 }

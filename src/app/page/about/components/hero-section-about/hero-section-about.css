@@ -1,109 +1,185 @@
 /* ===========================
-    Hero section Layout
+    Hero Wrapper
 ==============================*/
+.hero-section {
+  position: relative;
+  overflow: hidden; /* يمنع أي سكرول أفقي من الدواير */
+}
 
+.background {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* min-height: 100vh;
+  min-height: 100svh; */
 
+  /* مساحة للـ navbar الـ fixed فوق، ومسافة تحت */
+  /* padding-block: 110px 60px; */
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* المحتوى فوق الدواير */
+.background .container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
 
 /* ===========================
     Light Overlays Layer
 ==============================*/
-.background {
-    position: relative;;
+.light-orange-circle,
+.light-yellow-circle {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
-.light-orange-circle ,
- .light-yellow-circle {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-}
 .light-orange-circle::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(600px 600px at 15% 30% , rgba(249 , 115 , 22 , .10) , transparent 50%),
-                radial-gradient(400px 400px at 15% 30% , rgba(232 ,  116, 70 , 0.03), transparent 50%)
-    ;
-}
- .light-yellow-circle::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(600px 600px at 85% 65% , rgba(249 , 192 , 22 , .10) , transparent 50%),
-                radial-gradient(400px 400px at 85% 65% , rgba(232 ,  116, 70 , 0.03), transparent 50%)
-    ;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 600px at 15% 30%, rgba(249, 115, 22, 0.10), transparent 50%),
+    radial-gradient(400px 400px at 15% 30%, rgba(232, 116, 70, 0.03), transparent 50%);
 }
 
-
+.light-yellow-circle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 600px at 85% 65%, rgba(249, 192, 22, 0.10), transparent 50%),
+    radial-gradient(400px 400px at 85% 65%, rgba(232, 116, 70, 0.03), transparent 50%);
+}
 
 /* ===========================
     Typography
 ==============================*/
-.text-hero{
-    font-size: 60px;
-    font-weight: 700;
+.text-hero {
+  /* من 34px في الموبايل لحد 60px في الشاشات الكبيرة */
+  font-size: clamp(34px, 7vw, 60px);
+  font-weight: 700;
+  line-height: 1.3;
+  overflow-wrap: break-word;
 }
 
-
-.text-hero > span{
-    color: var(--color-accent);
+.text-hero > span {
+  color: var(--color-accent, #ff6908);
 }
+
 .text-p-hero {
-    font-size: 20px;
-    color: var(--color-text);
-    max-width: 768px;
+  /* من 15px في الموبايل لحد 20px في الشاشات الكبيرة */
+  font-size: clamp(15px, 2.4vw, 20px);
+  line-height: 1.8;
+  color: var(--color-text, #999);
+  width: 100%;
+  max-width: 768px;
 }
 
-.btn-hero-1{
-    font-size: 16px;
-    font-weight: 600;
-    color: white;
-    transition: 0.3s;
-    padding-inline: 32px;
-    padding-block: 16px;
-    background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12));
-    border-radius: 3.40282e+38px;;
+/* ===========================
+    Categories Row
+    (كان w-75 ثابت: ضيق جداً في الموبايل)
+==============================*/
+.categories-row {
+  width: 100%;
+  max-width: 1100px;
+  padding-top: 1rem;
 }
-.btn-hero-1 i{
-    transition: 0.3s;
+
+/* ===========================
+    Buttons
+==============================*/
+.btn-hero-1 {
+  padding: 16px 32px;
+  background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12));
+  border-radius: 999px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s;
 }
-.btn-hero-1:hover{
-    transform: translateY(-5px);
+
+.btn-hero-1 i {
+  transition: 0.3s;
 }
-.btn-hero-1:hover i{
-    transform: translateX(-5px);
+
+.btn-hero-1:hover {
+  transform: translateY(-5px);
 }
+
+.btn-hero-1:hover i {
+  transform: translateX(-5px);
+}
+
 .btn-hero-2 {
-    padding-inline: 32px;
-    padding-block: 16px;
-    font-weight: 600;
-    font-size: 16px;
-    color: white;
-    transition: 0.3s;
-    border: 1px solid #333;
-    border-radius: 3.40282e38px;
+  padding: 16px 32px;
+  border: 1px solid #333;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s;
 }
-
 
 .btn-hero-2:hover {
-    border: 1px solid #f97316;
-    color: #f97316;
+  border-color: #f97316;
+  color: #f97316;
 }
 
+/* ===========================
+    Tablet (أقل من 992px)
+==============================*/
+@media (max-width: 991.98px) {
+  /* .background {
+    padding-block: 100px 50px;
+  } */
 
+  .categories-row {
+    max-width: 720px;
+  }
+}
 
+/* ===========================
+    Mobile (أقل من 576px)
+==============================*/
+@media (max-width: 575.98px) {
+  /* .background {
+    padding-block: 90px 40px;
+  } */
 
+  .background .container {
+    padding-inline: 20px;
+  }
+
+  .text-hero {
+    padding-bottom: 1rem !important;
+  }
+
+  .text-p-hero {
+    padding-bottom: 1rem !important;
+    line-height: 1.7;
+  }
+
+  .btn-hero-1,
+  .btn-hero-2 {
+    padding: 13px 24px;
+    font-size: 15px;
+  }
+}
+
+/* ===========================
+    Very Small Phones (أقل من 360px)
+==============================*/
+@media (max-width: 359.98px) {
+  .text-hero {
+    font-size: 30px;
+  }
+}

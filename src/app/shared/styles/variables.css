@@ -59,7 +59,7 @@ body{
 }
 
 .page-wrapper {
-  padding-top: 80px;
+  padding-top: 65px;
 }
 
 /* Button Orange - Circle */
@@ -152,9 +152,7 @@ body{
 .hero-section{
     position: relative;
 }
-
 .hero-section > .background{
-    padding: 55px;
     inset: 0;
     position: absolute;
     background-image: linear-gradient(#26262680 1px, #0000 1px), linear-gradient(90deg, #26262680 1px, #0000 1px);

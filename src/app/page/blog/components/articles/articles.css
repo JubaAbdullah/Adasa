@@ -1,193 +1,359 @@
+/* =========================
+   Blog Page
+========================= */
+
+#articles-section {
+  scroll-margin-top: 80px; /* عشان الـ navbar الـ fixed ماتغطيش السكشن */
+}
+
+/* =========================
+   Sticky Top Row (Search + Chips)
+========================= */
 
 .top-row {
-    position: sticky;
-    top: 80px;
-    background-color: #0a0a0ae6;
-    padding: 25px 0px;
-    z-index: 40;
-    margin-block: 20px;
-    border-bottom: #262626 1px solid;
-    transition: background-color 0.3s ease;
+  position: sticky;
+  top: 64px; /* نفس ارتفاع الـ navbar */
+  z-index: 40;
+
+  margin-block: 20px;
+  padding: 20px 0;
+
+  background-color: #0a0a0ae6;
+  border-bottom: 1px solid #262626;
+
+  transition: background-color 0.3s ease;
 }
+
 .top-row.scrolled {
-  background-color: #0a0a0ae6; /* اللون الجديد اللي عاوزه */
+  background-color: #0a0a0ae6;
+  -webkit-backdrop-filter: blur(24px);
   backdrop-filter: blur(24px);
 }
+
+.top-row-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+}
+
+/* =========================
+   Search
+========================= */
+
 .top-row .search-box {
-    position: relative;
-    min-width: 320px;
-}
-.top-row .search-box input{
-    background-color: red;
-    border-radius: 12px;
-    border: 2px solid #262626;
-    background: #161616;
-    outline-style: none;
-    padding-block: 12px;
-    padding-inline: 20px;
-    width: 100%;
-    transition: 0.3s;
-    color: #fff;
+  position: relative;
+  width: 100%;
 }
 
+.top-row .search-box input {
+  width: 100%;
+  padding: 12px 20px;
+  padding-inline-end: 48px; /* مساحة للعدسة */
 
-.top-row .search-box input:focus{
-    border: 2px solid #f97316;
+  background: #161616;
+  border: 2px solid #262626;
+  border-radius: 12px;
+  outline: none;
+
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px; /* يمنع الزووم التلقائي في iPhone */
+
+  transition: border-color 0.3s;
+}
+
+.top-row .search-box input::placeholder {
+  color: #777;
+  opacity: 1;
+}
+
+.top-row .search-box input:focus {
+  border-color: #f97316;
 }
 
 .top-row .search-box i {
-    position: absolute;
-    top: 35%;
-    left: 5%;
+  position: absolute;
+  top: 50%;
+  inset-inline-end: 18px;
+  transform: translateY(-50%);
+
+  color: #777;
+  pointer-events: none;
 }
+
+/* =========================
+   Chips
+========================= */
+
 .chips {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  width: 100%;
+
+  /* سكرول أفقي بدل ما الشيبس تاخد أسطر كتير وهي sticky */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.chips::-webkit-scrollbar {
+  display: none;
 }
 
 .chips .chip {
-    color: var(--color-text);
-    font-weight: 500;
-    font-size: 14px;
-    padding-block: 8px;
-    padding-inline: 16px;
-    background-color: rgb(22, 22, 22);
-    border: 1px solid rgb(38, 38, 38);
-    border-radius: 12px;
-    transition: 0.3s;
+  flex-shrink: 0;
+  padding: 8px 16px;
+
+  background-color: #161616;
+  border: 1px solid #262626;
+  border-radius: 12px;
+
+  color: var(--color-text, #999);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+
+  transition: 0.3s;
 }
+
+.chips .chip:hover {
+  color: #fff;
+  border-color: #f54a00;
+}
+
 .chips .chip.active {
-    color: #fff;
-    font-weight: 500;
-    font-size: 14px;
-    padding-block: 8px;
-    padding-inline: 16px;
-    background-color: #f54a00;
-    border: none;
-    border-radius: 12px;
-    transition: 0.3s;
+  color: #fff;
+  background-color: #f54a00;
+  border-color: #f54a00;
+}
+
+/* =========================
+   Results Bar (count + view toggle)
+========================= */
+
+.results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 8px;
+  padding-bottom: 28px;
+}
+
+.results-bar .count {
+  margin: 0;
+  color: var(--color-text, #999);
+  font-size: 14px;
 }
 
 .wrapper-toggle {
-    border: 1px solid #262626;
-    background-color: #161616;
-    border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+
+  background-color: #161616;
+  border: 1px solid #262626;
+  border-radius: 12px;
 }
-.wrapper-toggle-unActive{
-    color: var(--color-text);
-    padding: 8px;
-    border-radius: 8px;
-    background-color: transparent;
-    border: none;
+
+.wrapper-toggle-unActive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--color-text, #999);
+  cursor: pointer;
+
+  transition: 0.25s;
 }
+
 .wrapper-toggle .wrapper-toggle-Active {
-    padding: 8px;
-    color: white;
-    background-color: #ff6900;
-    border-radius: 8px;
-    border: none;
+  background-color: #ff6900;
+  color: #fff;
 }
 
+/* =========================
+   Empty State
+========================= */
 
-
-
-
-
-.pagination-wrapper {
+.empty-state {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
-  padding: 20px 0;
-  background-color: #0a0a0a;
+  justify-content: center;
+  gap: 8px;
+  padding: 48px 16px;
+  text-align: center;
 }
 
-/* Pagination container */
+.empty-state h2 {
+  margin: 8px 0 0;
+  font-size: clamp(20px, 4vw, 28px);
+}
+
+.empty-state p {
+  margin: 0 0 12px;
+  color: var(--color-text, #999);
+}
+
+/* =========================
+   Pagination
+========================= */
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
 .custom-pagination {
   display: flex;
+  flex-wrap: wrap; /* لو الصفحات كتير تنزل سطر جديد بدل ما تعمل سكرول */
   align-items: center;
   justify-content: center;
   gap: 8px;
+  padding: 0;
 }
 
-/* All buttons */
 .custom-pagination .page-link {
-  width: 44px;
-  height: 45px;
-  padding: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
 
   background-color: #171717;
   color: #bdbdbd;
-
   border: 1px solid #292929;
   border-radius: 12px !important;
 
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
-  text-decoration: none;
-
   box-shadow: none;
+
   transition: all 0.2s ease;
 }
 
-/* Remove Bootstrap default styles */
 .custom-pagination .page-link:focus {
   box-shadow: none;
 }
-.disabled {
-  cursor: no-drop;
-}
-/* Hover */
+
 .custom-pagination .page-link:hover {
-  color: #ffffff;
-  background-color: #222222;
+  color: #fff;
+  background-color: #222;
   border-color: #ff6500;
 }
 
-/* Active page */
-.custom-pagination .active-page {
-  background-color: #ff6500;
-  border-color: #ff6500;
-  color: #ffffff;
-  font-weight: 600;
-
-}
-
+.custom-pagination .active-page,
 .custom-pagination .active-page:hover {
   background-color: #ff6500;
   border-color: #ff6500;
+  color: #fff;
+  font-weight: 600;
 }
 
-/* Outlined page */
-.custom-pagination .outlined-page {
-  border-color: #b85a0a;
-  color: #ffffff;
-}
-
-/* Arrow buttons */
 .custom-pagination .arrow-btn {
-  background-color: #171717;
-  color: #ffffff;
+  color: #fff;
   font-size: 16px;
 }
 
-/* Disabled next button */
-.custom-pagination .next-btn {
+/* أزرار السابق/التالي وهي معطلة (بس لما تكون فعلاً disabled) */
+.custom-pagination .page-item.disabled .page-link {
   background-color: #0a0a0a;
   color: #454545;
   border-color: #242424;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
-/* Page information */
-.pagination-info {
-  color: #777777;
-  font-size: 12px;
-  font-weight: 400;
-  text-align: center;
+/* =========================
+   Desktop (992px+)
+   السيرش على جنب والشيبس على الجنب التاني
+========================= */
+
+@media (min-width: 992px) {
+  .top-row-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .top-row .search-box {
+    flex: 0 0 320px;
+    width: 320px;
+  }
+
+  .chips {
+    flex: 1;
+    flex-wrap: wrap;       /* على الشاشات الكبيرة مفيش داعي للسكرول */
+    justify-content: flex-end;
+    overflow: visible;
+    width: auto;
+  }
+}
+
+/* =========================
+   Tablet (أقل من 992px)
+========================= */
+
+@media (max-width: 991.98px) {
+  .top-row {
+    margin-block: 14px;
+    padding: 14px 0;
+  }
+}
+
+/* =========================
+   Mobile (أقل من 576px)
+========================= */
+
+@media (max-width: 575.98px) {
+  .top-row {
+    margin-block: 10px;
+    padding: 12px 0;
+  }
+
+  .top-row-inner {
+    gap: 10px;
+  }
+
+  .top-row .search-box input {
+    padding-block: 10px;
+  }
+
+  .chips .chip {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+
+  .results-bar {
+    padding-bottom: 20px;
+  }
+
+  .custom-pagination {
+    gap: 6px;
+  }
+
+  .custom-pagination .page-link {
+    width: 38px;
+    height: 38px;
+    font-size: 13px;
+  }
+
+  .pagination-wrapper {
+    padding: 28px 0;
+  }
 }

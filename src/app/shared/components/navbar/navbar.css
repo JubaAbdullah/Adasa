@@ -1,186 +1,311 @@
-
-/* Navbar */
+/* =========================
+   Variables
+========================= */
 .custom-navbar {
-  min-height: 64px;
-  background-color: #151515;
-  border-bottom: 1px solid #242424;
+  --nav-border: #2a2a2a;
+  --nav-orange: #ff6908;
+  --nav-height: 64px;
+}
+
+/* =========================
+   Navbar
+========================= */
+.custom-navbar {
   position: fixed;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+
+  min-height: var(--nav-height);
+  padding: 0;
+  background-color: #151515;
+  border-bottom: 1px solid #242424;
 
   transition: background-color 0.3s ease;
 }
 
 .custom-navbar.scrolled {
-  background-color: #0a0a0af2; /* اللون الجديد اللي عاوزه */
-}
-/* Container */
-.custom-navbar .container {
-  min-height: 64px;
+  background-color: #0a0a0af2;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
-/* Logo */
+.custom-navbar .container {
+  min-height: var(--nav-height);
+  align-items: center;
+}
+
+/* =========================
+   Logo
+========================= */
 .brand-logo {
   display: flex;
   align-items: center;
   gap: 12px;
   margin: 0;
+  padding: 0;
   cursor: pointer;
 }
-.brand-logo:hover img {
-    scale: 1.09;
+
+.brand-logo img {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.5s;
 }
+
+.brand-logo:hover img {
+  transform: scale(1.09);
+}
+
 .brand-text {
   display: flex;
   flex-direction: column;
   line-height: 1.4;
 }
+
 .brand-title {
-  color: white;
+  color: #fff;
   font-size: 20px;
   font-weight: 700;
 }
+
 .brand-subtitle {
-  color: color-mix(in oklab,#ff8904 80%,transparent);
+  color: color-mix(in oklab, #ff8904 80%, transparent);
   font-size: 12px;
   letter-spacing: 0.3px;
-}
-.brand-logo img {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  color: #ff6908;
-  font-size: 29px;
-  line-height: 1;
-  transition: 0.5s;
+  white-space: nowrap;
 }
 
-
-/* Navigation */
+/* =========================
+   Navigation Links
+========================= */
 .nav-links {
-  padding: 6px;
-  border: 1px solid var(--color-border);
-  border-radius: 30px;
   flex-direction: row;
-  gap: 15px;
+  gap: 8px;
+  padding: 6px;
+  margin-bottom: 0;
+  border: 1px solid var(--nav-border);
+  border-radius: 30px;
 }
 
 .custom-navbar .nav-link {
-  padding: 9px 17px;
+  padding: 9px 20px;
   color: #999;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   border-radius: 25px;
-  transition: 0.25s;
   white-space: nowrap;
-}
-.custom-navbar .nav-link:hover{
-    color: #fff;
-}
-.custom-navbar .nav-link.active {
-  color: #fff;
-  background-color: #ff6908;
+  transition: color 0.25s, background-color 0.25s;
 }
 
-/* Actions */
+.custom-navbar .nav-link:hover {
+  color: #fff;
+}
+
+.custom-navbar .nav-link.active {
+  color: #fff;
+  background-color: var(--nav-orange);
+}
+
+/* =========================
+   Actions
+========================= */
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 16px;
 }
 
 .search-btn {
-    padding: 12px;
-    border: 1px solid transparent;
-    border-radius: 12px;
-    cursor: pointer;
-    background-color: transparent;
-    transition: 0.5s;
-}   
-.search-btn i{ 
-    transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: #999;
+  cursor: pointer;
+
+  transition: border-color 0.3s, color 0.3s;
 }
+
 .search-btn:hover {
-  border: 1px solid var(--color-border);   
-}
-.search-btn:hover i{
-    color: #ff6908;
+  border-color: var(--nav-border);
+  color: var(--nav-orange);
 }
 
 .read-btn {
-    cursor: pointer;
-    padding-inline: 32px;
-    padding-block: 16px;
-    --tw-font-weight: 600;
-    font-weight:600;
-    color: #fff;
-    transition-property: all;
-    --tw-duration: .3s;
-    background: linear-gradient(135deg, #f97316, #ea580c);
-    border-radius: 3.40282e38px;
-    justify-content: center;
-    align-items: center;
-    transition-duration: .3s;
-    display: inline-flex;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 26px;
+  border: 0;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+
+  transition: transform 0.3s, filter 0.3s;
 }
 
 .read-btn:hover {
   color: #fff;
   transform: translateY(-2px);
+  filter: brightness(1.08);
 }
 
-/* Mobile Toggle */
+/* =========================
+   Mobile Toggle
+   (الأيقونة الافتراضية غامقة وبتختفي على الخلفية السودا)
+========================= */
 .custom-toggler {
+  padding: 7px 10px;
   border: 1px solid #393939;
-  padding: 7px 9px;
+  border-radius: 10px;
   box-shadow: none !important;
 }
 
-.custom-toggler:focus {
-  box-shadow: none;
+.custom-toggler .navbar-toggler-icon {
+  width: 1.4em;
+  height: 1.4em;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* Mobile */
+/* =========================
+   Tablet (768px - 991px)
+   المساحة ضيقة: نصغر الأحجام ونخفي الـ subtitle
+========================= */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .custom-navbar .container {
+    max-width: 100%;
+    padding-inline: 16px;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .brand-logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-title {
+    font-size: 18px;
+  }
+
+  .nav-links {
+    gap: 2px;
+    padding: 4px;
+  }
+
+  .custom-navbar .nav-link {
+    padding: 8px 13px;
+    font-size: 13px;
+  }
+
+  .navbar-actions {
+    gap: 8px;
+  }
+
+  .read-btn {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   Mobile (أقل من 768px)
+========================= */
 @media (max-width: 767.98px) {
   .custom-navbar .container {
     flex-wrap: wrap;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 9px;
+    padding-bottom: 9px;
   }
 
   .brand-logo {
     margin-inline-end: auto;
   }
 
+  .brand-logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-title {
+    font-size: 18px;
+  }
+
+  .brand-subtitle {
+    font-size: 11px;
+  }
+
   .custom-toggler {
     order: 2;
   }
 
+  /* القائمة مفتوحة وطويلة: تتسكرول جوه نفسها بدل ما تتقص */
   .navbar-collapse {
     flex-basis: 100%;
-    padding-top: 15px;
+    max-height: calc(100vh - var(--nav-height) - 10px);
+    overflow-y: auto;
+    padding-top: 12px;
   }
 
   .nav-links {
     flex-direction: column;
     align-items: stretch;
+    gap: 4px;
     padding: 8px;
-    border-radius: 12px;
+    border-radius: 14px;
   }
 
   .custom-navbar .nav-link {
-    padding: 12px 15px;
-    font-size: 14px;
-    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 15px;
+    border-radius: 10px;
   }
 
   .navbar-actions {
-    justify-content: space-between;
+    gap: 10px;
     margin-top: 12px;
-    padding: 10px 5px 0;
+    padding-bottom: 6px;
+  }
+
+
+  .read-btn {
+    flex: 1;
+    padding: 13px 20px;
+    font-size: 15px;
+  }
+  .search-btn {
+  display: none;
+}
+}
+
+/* =========================
+   Very Small Phones (أقل من 360px)
+========================= */
+@media (max-width: 359.98px) {
+  .brand-subtitle {
+    display: none;
+  }
+
+  .brand-logo {
+    gap: 8px;
   }
 }

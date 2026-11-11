@@ -1,74 +1,83 @@
-/* ===========================
-    Hero section Layout
-==============================*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ===========================
-    Light Overlays Layer
+   Hero Background
 ==============================*/
+
 .background {
-    position: relative;;
+    position: relative;
+    overflow: hidden;
 }
 
-.light-orange-circle ,
- .light-yellow-circle {
+/* Light Overlays */
+
+.light-orange-circle,
+.light-yellow-circle {
     position: absolute;
     inset: 0;
     z-index: 0;
     pointer-events: none;
 }
+
 .light-orange-circle::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(600px 600px at 15% 30% , rgba(249 , 115 , 22 , .10) , transparent 50%),
-                radial-gradient(400px 400px at 15% 30% , rgba(232 ,  116, 70 , 0.03), transparent 50%)
-    ;
+    background:
+        radial-gradient(600px 600px at 15% 30%, rgba(249, 115, 22, .10), transparent 50%),
+        radial-gradient(400px 400px at 15% 30%, rgba(232, 116, 70, 0.03), transparent 50%);
 }
- .light-yellow-circle::before {
+
+.light-yellow-circle::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(600px 600px at 85% 65% , rgba(249 , 192 , 22 , .10) , transparent 50%),
-                radial-gradient(400px 400px at 85% 65% , rgba(232 ,  116, 70 , 0.03), transparent 50%)
-    ;
+    background:
+        radial-gradient(600px 600px at 85% 65%, rgba(249, 192, 22, .10), transparent 50%),
+        radial-gradient(400px 400px at 85% 65%, rgba(232, 116, 70, 0.03), transparent 50%);
 }
-
-
 
 /* ===========================
-    Typography
+   Hero Content
 ==============================*/
-.text-hero{
-    font-size: 70px;
-    font-weight: 700;
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
 
+/* ===========================
+   Typography
+==============================*/
 
-.text-hero > span{
+.text-hero {
+    font-size: clamp(36px, 5vw, 70px);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.text-hero > span {
     color: var(--color-accent);
 }
+
 .text-p-hero {
-    font-size: 24px;
+    font-size: clamp(16px, 2vw, 24px);
     color: var(--color-text);
     max-width: 672px;
+    line-height: 1.7;
 }
 
-.btn-hero-1{
+/* ===========================
+   Hero Buttons
+==============================*/
+
+.hero-actions {
+    flex-wrap: wrap;
+}
+
+.btn-hero-1 {
     font-size: 16px;
     font-weight: 600;
     color: white;
@@ -76,17 +85,21 @@
     padding-inline: 32px;
     padding-block: 16px;
     background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12));
-    border-radius: 3.40282e+38px;;
+    border-radius: 999px;
 }
-.btn-hero-1 i{
+
+.btn-hero-1 i {
     transition: 0.3s;
 }
-.btn-hero-1:hover{
+
+.btn-hero-1:hover {
     transform: translateY(-5px);
 }
-.btn-hero-1:hover i{
+
+.btn-hero-1:hover i {
     transform: translateX(-5px);
 }
+
 .btn-hero-2 {
     padding-inline: 32px;
     padding-block: 16px;
@@ -95,15 +108,75 @@
     color: white;
     transition: 0.3s;
     border: 1px solid #333;
-    border-radius: 3.40282e38px;
+    border-radius: 999px;
 }
-
 
 .btn-hero-2:hover {
     border: 1px solid #f97316;
     color: #f97316;
 }
 
+/* ===========================
+   Categories
+==============================*/
 
+.hero-categories {
+    width: 100%;
+    max-width: 960px;
+}
 
+/* ===========================
+   Tablet
+==============================*/
 
+@media (max-width: 991.98px) {
+    .hero-content {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .hero-categories {
+        max-width: 750px;
+    }
+}
+
+/* ===========================
+   Mobile
+==============================*/
+
+@media (max-width: 575.98px) {
+    .hero-content {
+        padding-top: 50px;
+        padding-bottom: 40px;
+    }
+
+    .text-hero {
+        font-size: 36px;
+        padding-bottom: 16px !important;
+    }
+
+    .text-p-hero {
+        font-size: 15px;
+        padding-bottom: 20px !important;
+    }
+
+    .hero-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px !important;
+    }
+
+    .btn-hero-1,
+    .btn-hero-2 {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        padding: 13px 20px;
+        font-size: 14px;
+    }
+
+    .hero-categories {
+        max-width: 100%;
+    }
+}

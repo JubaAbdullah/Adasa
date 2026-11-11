@@ -69,23 +69,34 @@
 
           <ul class="footer-links">
             <li>
-              <a routerLink="/blog" class="d-flex justify-content-start align-items-center gap-1">
-                
-                <i class="fa-solid fa-angle-left  icon-footer"></i>
-                إضاءة</a>
+              <a
+                routerLink="/blog"
+                [queryParams]="{ category: 'إضاءة' }"
+                class="d-flex justify-content-start align-items-center gap-1"
+              >
+                <i class="fa-solid fa-angle-left icon-footer" aria-hidden="true"></i>
+                إضاءة
+              </a>
             </li>
+            
             <li>
-              <a routerLink="/blog" class="d-flex justify-content-start align-items-center gap-1">
+              <a routerLink="/blog" 
+               [queryParams]="{ category: 'بورتريه' }"
+               class="d-flex justify-content-start align-items-center gap-1">
                 <i class="fa-solid fa-angle-left  icon-footer"></i>
                 بورتريه</a>
             </li>
             <li>
-              <a routerLink="/blog" class="d-flex justify-content-start align-items-center gap-1">
+              <a routerLink="/blog" 
+              [queryParams]="{ category: 'مناظر طبيعية' }"
+              class="d-flex justify-content-start align-items-center gap-1">
                 <i class="fa-solid fa-angle-left  icon-footer"></i>
                 مناظر طبيعية</a>
             </li>
             <li>
-              <a routerLink="/blog" class="d-flex justify-content-start align-items-center gap-1">
+              <a routerLink="/blog"
+               [queryParams]="{ category: 'تقنيات' }"
+               class="d-flex justify-content-start align-items-center gap-1">
                 <i class="fa-solid fa-angle-left  icon-footer"></i>
                 تقنيات</a>
             </li>

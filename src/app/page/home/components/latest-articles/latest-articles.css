@@ -1,21 +1,63 @@
 
-.latest-articles h2{
-    font-size: 60px;
+/* Latest Articles Section */
+.latest-articles h2 {
+    font-size: clamp(2rem, 4vw, 3.75rem);
     font-weight: 800;
+    line-height: 1.2;
 }
-.latest-articles p{
+
+/* Section Description */
+.latest-articles .text-p {
     font-size: 18px;
     margin-top: 16px;
     color: var(--color-text);
 }
-span {
+
+/* View All Link */
+.latest-articles .latest-articles__link {
     font-size: 20px;
     font-weight: 800;
     cursor: pointer;
+    white-space: nowrap;
+     color: var(--color-primary);
 }
-span > i{
+
+.latest-articles__link i {
     transition: 0.3s;
 }
-span:hover > i {
+
+.latest-articles__link:hover i {
     transform: translateX(-5px);
+}
+
+/* Tablet */
+@media (max-width: 991.98px) {
+    .latest-articles .latest-articles__link {
+        font-size: 17px;
+    }
+
+    .latest-articles .text-p {
+        font-size: 16px;
+    }
+}
+/* Mobile */
+@media (max-width: 575.98px) {
+    .latest-articles h2 {
+        font-size: 32px;
+    }
+
+    .latest-articles__top {
+        align-items: flex-start !important;
+        gap: 8px;
+    }
+
+    .latest-articles .text-p {
+        font-size: 14px;
+        margin-top: 8px;
+        margin-bottom: 0;
+    }
+
+    .latest-articles .latest-articles__link {
+        font-size: 15px;
+    }
 }

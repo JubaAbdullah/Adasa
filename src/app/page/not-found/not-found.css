@@ -1,126 +1,309 @@
+
 /* ===========================
-    Light Overlays Layer
-==============================*/
-.background {
-    position: relative;;
+   Hero Section
+============================== */
+
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
 
-.light-orange-circle ,
- .light-yellow-circle {
+/* ===========================
+   Light Overlays
+============================== */
+
+.light-orange-circle,
+.light-yellow-circle {
     position: absolute;
     inset: 0;
     z-index: 0;
     pointer-events: none;
 }
+
 .light-orange-circle::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(600px 600px at 15% 30% , rgba(249 , 115 , 22 , .10) , transparent 50%),
-                radial-gradient(400px 400px at 15% 30% , rgba(232 ,  116, 70 , 0.03), transparent 50%)
-    ;
+    background:
+        radial-gradient(
+            600px 600px at 15% 30%,
+            rgba(249, 115, 22, .10),
+            transparent 50%
+        ),
+        radial-gradient(
+            400px 400px at 15% 30%,
+            rgba(232, 116, 70, .03),
+            transparent 50%
+        );
 }
- .light-yellow-circle::before {
+
+.light-yellow-circle::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(600px 600px at 85% 65% , rgba(249 , 192 , 22 , .10) , transparent 50%),
-                radial-gradient(400px 400px at 85% 65% , rgba(232 ,  116, 70 , 0.03), transparent 50%)
-    ;
+    background:
+        radial-gradient(
+            600px 600px at 85% 65%,
+            rgba(249, 192, 22, .10),
+            transparent 50%
+        ),
+        radial-gradient(
+            400px 400px at 85% 65%,
+            rgba(232, 116, 70, .03),
+            transparent 50%
+        );
 }
 
+/* ===========================
+   Content
+============================== */
 
-
-
-
-
-
-
-
-
-
+.content,
+.btn-not,
+.links-not {
+    position: relative;
+    z-index: 1;
+}
 
 .content span {
-    font-size: 180px;
+    display: block;
+    font-size: clamp(100px, 15vw, 180px);
     font-weight: 900;
+    line-height: 1.1;
     color: #ff6900;
     margin: 0;
 }
+
 .icon-privacy {
     background-color: #3C2608;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 112px;
-    height: 112px;
-    margin-bottom: 32px;
-    margin-inline: auto;
-    font-size: 50px;
+    width: clamp(75px, 9vw, 112px);
+    height: clamp(75px, 9vw, 112px);
+    margin: 10px auto 32px;
+    font-size: clamp(32px, 4vw, 50px);
     border-radius: 50%;
     color: #ff6900;
     border: 1px solid #ff6900;
+    flex-shrink: 0;
 }
 
 .content h1 {
-    font-size: 30px;
+    font-size: clamp(22px, 3vw, 30px);
     font-weight: 700;
     color: white;
+    margin-bottom: 16px;
 }
+
 .content p {
     color: #a1a1a1;
-    font-size: 18px;
+    font-size: clamp(14px, 1.8vw, 18px);
+    line-height: 1.8;
     margin-bottom: 32px;
 }
-.btn-not button{
+
+/* ===========================
+   Buttons
+============================== */
+
+.btn-not {
+    flex-wrap: wrap;
+    padding-inline: 15px;
+}
+
+.btn-not button {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
+    white-space: nowrap;
 }
-.btn-1 {
-    background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12));
-    color: white;
-    padding-inline: 32px;
-    padding-block: 16px;
-    border-radius: 3.40282e+38px;
-    border: none;
-    font-size: 20px;
+
+.btn-1,
+.btn-2 {
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: clamp(14px, 1.8vw, 20px);
     font-weight: 800;
     transition: .3s;
 }
+
+.btn-1 {
+    background: linear-gradient(
+        135deg,
+        rgb(249, 115, 22),
+        rgb(234, 88, 12)
+    );
+    color: white;
+    border: none;
+}
+
 .btn-1:hover {
     transform: translateY(-5px);
 }
+
 .btn-2 {
     color: white;
-    padding-inline: 32px;
-    padding-block: 16px;
-    border-radius: 3.40282e+38px;
-    font-size: 20px;
-    font-weight: 800;
-    transition: .3s;
     background-color: transparent;
     border: 1px solid #a1a1a1;
 }
+
 .btn-2:hover {
     background-color: #3C2608;
-    border: 1px solid #ff6900;
+    border-color: #ff6900;
 }
+
+/* ===========================
+   Useful Links
+============================== */
+
+.links-not {
+    margin-top: 48px;
+    padding-inline: 15px;
+}
+
 .parag {
     color: #ff6900;
     font-size: 14px;
     margin-bottom: 16px;
 }
-.ancor-not a{
+
+.ancor-not {
+    flex-wrap: wrap;
+}
+
+.ancor-not a {
     color: #ff6900;
     font-weight: 500;
     cursor: pointer;
     text-decoration: none;
-    transition: 0.3s;
+    transition: .3s;
 }
+
 .ancor-not i {
     font-size: 5px;
 }
-.ancor-not a:hover{
+
+.ancor-not a:hover {
     text-decoration: underline;
+}
+
+/* ===========================
+   Tablets
+============================== */
+
+@media (max-width: 991px) {
+
+   
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        min-height: 100vh;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+
+    .content p {
+        max-width: 600px;
+        margin-inline: auto;
+        margin-bottom: 28px;
+    }
+
+    .btn-1,
+    .btn-2 {
+        padding: 14px 25px;
+    }
+
+}
+
+/* ===========================
+   Mobile
+============================== */
+
+@media (max-width: 576px) {
+
+    /* .hero-section {
+        min-height: 100svh;
+        padding: 40px 15px;
+    } */
+
+    .content span {
+        font-size: clamp(90px, 25vw, 120px);
+    }
+
+    .icon-privacy {
+        margin-top: 10px;
+        margin-bottom: 24px;
+    }
+
+    .content h1 {
+        font-size: 22px;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    .content p {
+        font-size: 14px;
+        line-height: 1.9;
+        margin-bottom: 25px;
+        max-width: 350px;
+    }
+
+    .btn-not {
+        flex-direction: column;
+        gap: 12px !important;
+        width: 100%;
+    }
+
+    .btn-not button {
+        width: 100%;
+        max-width: 320px;
+        padding: 14px 15px;
+        font-size: 15px;
+    }
+
+    .links-not {
+        margin-top: 35px;
+    }
+
+    .ancor-not {
+        gap: 10px !important;
+        font-size: 13px;
+    }
+
+}
+
+/* ===========================
+   Small Mobile
+============================== */
+
+@media (max-width: 360px) {
+
+    /* .hero-section {
+        padding-inline: 10px;
+    } */
+
+    .content h1 {
+        font-size: 19px;
+    }
+
+    .content p {
+        font-size: 13px;
+    }
+
+    .btn-not button {
+        font-size: 14px;
+    }
+
+    .ancor-not {
+        font-size: 12px;
+        gap: 7px !important;
+    }
+
 }
